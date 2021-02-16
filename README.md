@@ -1,0 +1,1 @@
+使用bootstrap（https://www.bootcss.com/）前端开发框架制作的静态网页，部分后端功能未健全。

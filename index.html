@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css" />
+		<link rel="stylesheet" type="text/css" href="../css/index_1.css" />
+		<script src="../js/jquery.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/bootstrap.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="../js/echarts.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			$(function() {
+				var myChart = echarts.init(document.getElementById('main'));
+				var option = {
+					
+					tooltip: {
+						trigger: 'axis',
+						axisPointer: {
+							type: 'cross',
+							label: {
+								backgroundColor: '#6a7985'
+							}
+						}
+					},
+					
+					toolbox: {
+						feature: {
+							saveAsImage: {}
+						}
+					},
+					grid: {
+						top: '5%',
+						left: '3%',
+						right: '4%',
+						bottom: '3%',
+						containLabel: true
+					},
+					xAxis: [{
+						type: 'category',
+						boundaryGap: false,
+						data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+					}],
+					yAxis: [{
+						type: 'value'
+					}],
+					series: [{
+							type: 'line',
+							stack: '总量',
+							areaStyle: {},
+							smooth: true,
+							data: [120, 132, 101, 134, 90, 230, 210]
+						},
+						{
+							type: 'line',
+							stack: '总量',
+							areaStyle: {},
+							smooth: true,
+							data: [220, 182, 191, 234, 290, 330, 310]
+						},
+						{
+							type: 'line',
+							stack: '总量',
+							areaStyle: {},
+							smooth: true,
+							data: [150, 232, 201, 154, 190, 330, 410]
+						}
+					]
+				};
+
+
+				// 使用刚指定的配置项和数据显示图表。
+				myChart.setOption(option);
+				
+				$(".btn").click(function () {
+					var txt=$("textarea").val();
+//					console.log(txt);
+					var arr='<div class="media well"><div class="media-left"><a href="#"><img class="media-object"  src="../images/a.png" style="width: 30px;height: 30px;" alt="..."></a></div><div class="media-body"><p class="media-heading">卓大哥</p><h6 class="media-heading">'+txt+'</h6></div></div>';
+					$(".last:last").after(arr);
+				})
+			})
+		</script>
+	</head>
+
+	<body>
+		<div class="container-fluid">
+			<div class="row">
+				<nav class="navbar navbar-default">
+					<div class="container-fluid">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<div class="navbar-header">
+							<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+       							<span class="sr-only">Toggle navigation</span>
+        						<span class="icon-bar"></span>
+        						<span class="icon-bar"></span>
+       							<span class="icon-bar"></span>
+     						 </button>
+							<a class="navbar-brand" href="#">Maizi Admin</a>
+						</div>
+
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+							<ul class="nav navbar-nav">
+								<li class="active">
+									<a href="index.html"><i class="glyphicon glyphicon-home"></i>后台首页 <span class="sr-only">(current)</span></a>
+								</li>
+								<li>
+									<a href="list1.html"><i class="glyphicon glyphicon-user"></i>用户管理</a>
+								</li>
+								<li>
+									<a href="list_3.html"><i class="glyphicon glyphicon-list-alt"></i>内容管理</a>
+								</li>
+								<li>
+									<a href="last.html"><i class="glyphicon glyphicon-tag"></i>标签管理</a>
+								</li>
+
+							</ul>
+							<!--<form class="navbar-form navbar-left">
+								<div class="form-group">
+									<input type="text" class="form-control" placeholder="Search">
+								</div>
+								<button type="submit" class="btn btn-default">Submit</button>
+							</form>-->
+							<ul class="nav navbar-nav navbar-right">
+
+								<li class="dropdown">
+									<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+									<ul class="dropdown-menu">
+										<li>
+											<a href="qiantai.html"><i class="glyphicon glyphicon-screenshot"></i>前台首页</a>
+										</li>
+										<li>
+											<a href="#"><i class="glyphicon glyphicon-user"></i>个人主页</a>
+										</li>
+										<li>
+											<a href="#"><i class="glyphicon glyphicon-cog"></i>个人设置</a>
+										</li>
+										<li>
+											<a href="#"> <i class="glyphicon glyphicon-credit-card"></i>账户中心</a>
+										</li>
+										<li>
+											<a href="#"><i class="glyphicon glyphicon-heart"></i>我的收藏</a>
+										</li>
+									</ul>
+									<li>
+										<a href="#"><i class=" glyphicon glyphicon-off"></i>退出</a>
+									</li>
+								</li>
+							</ul>
+						</div>
+						<!-- /.navbar-collapse -->
+					</div>
+					<!-- /.container-fluid -->
+				</nav>
+			</div>
+		</div>
+		
+				<div class="container">
+					<div class="row">
+					<div class="col-md-12">
+						<div class="alert alert-danger" role="alert">
+							<!--<a href="#" class="alert-link">-->
+							<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+							<h2>网站程序有漏洞，紧急修复！</h2>
+							<p>当前版本程序(V1.22)存在严重安全问题，容易造成攻击，请即刻修复!</p>
+							<button type="button" class="btn btn-danger">立即修复</button>
+							<button type="button" class="btn btn-default" data-dismiss="alert">稍后处理</button>
+							<!--</a>-->
+						</div>
+					</div>
+						
+					</div>
+				</div>
+
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">网站数据统计</div>
+						<div class="panel-body">
+							<table class="table table-hover">
+								<thead>
+									<tr>
+										<th>统计项目</th>
+										<th>今日</th>
+										<th>昨日</th>
+									</tr>
+								</thead>
+								<tr>
+									<th>注册会员</th>
+									<td>200</td>
+									<td>400</td>
+								</tr>
+								<tr>
+									<th>登录会员</th>
+									<td>4100</td>
+									<td>5112</td>
+								</tr>
+								<tr>
+									<th>今日发帖</th>
+									<td>1540</td>
+									<td>4511</td>
+								</tr>
+								<tr>
+									<th>转载次数</th>
+									<td>150</td>
+									<td>110</td>
+								</tr>
+							</table>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<a href="">网站热帖</a>
+						</div>
+
+						<ul class="list-group">
+							<li class="list-group-item">
+								<a href=""><i class="glyphicon glyphicon-list-alt"></i>泛Mooc职业教育，效果和就业为王</a>
+								<a href="" class="pull-right">2015/08/08</a>
+							</li>
+							<li class="list-group-item">
+								<a href=""><i class="glyphicon glyphicon-list-alt"></i>泛Mooc职业教育，效果和就业为王</a>
+								<a href="" class="pull-right">2015/08/08</a>
+							</li>
+							<li class="list-group-item">
+								<a href=""><i class="glyphicon glyphicon-list-alt"></i>泛Mooc职业教育，效果和就业为王</a>
+								<a href="" class="pull-right">2015/08/08</a>
+							</li>
+							<li class="list-group-item">
+								<a href=""><i class="glyphicon glyphicon-list-alt"></i>泛Mooc职业教育，效果和就业为王</a>
+								<a href="" class="pull-right">2015/08/08</a>
+							</li>
+							<li class="list-group-item">
+								<a href=""><i class="glyphicon glyphicon-list-alt"></i>泛Mooc职业教育，效果和就业为王</a>
+								<a href="" class="pull-right">2015/08/08</a>
+							</li>
+							<li class="list-group-item">
+								<a href=""><i class="glyphicon glyphicon-list-alt"></i>泛Mooc职业教育，效果和就业为王</a>
+								<a href="" class="pull-right">2015/08/08</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--第二部分-->
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">今日访客统计</div>
+						<div class="panel-body">
+							<!-- 为 ECharts 准备一个具备大小（宽高）的 DOM -->
+							<div id="main" style="width: 500px;height:270px;"></div>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="panel panel-default">
+						<div class="panel-heading">服务器状态</div>
+						<div class="panel-body">
+							<p>内存使用率：40%</p>
+							<div class="progress">
+								<div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+									<span class="sr-only">40% Complete (success)</span>
+								</div>
+							</div>
+							<p>数据库使用率：20%</p>
+							<div class="progress">
+								<div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+									<span class="sr-only">20% Complete</span>
+								</div>
+							</div>
+							<p>磁盘使用率：60%</p>
+							<div class="progress">
+								<div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+									<span class="sr-only">60% Complete (warning)</span>
+								</div>
+							</div>
+							<p>CPU使用率：80%</p>
+							<div class="progress">
+								<div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+									<span class="sr-only">80% Complete (danger)</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<!--第三部分-->
+		<div class="container">
+			<div class="row">
+				
+			</div>
+			<div class="panel panel-default">
+				<div class="panel-heading">团队留言板</div>
+				<div class="panel-body">
+					<div class="col-md-6 last">
+
+						<div class="media well">
+							<div class="media-left">
+								<a href="#">
+									<img class="media-object" src="../images/a.png" style="width: 30px;height: 30px;" alt="...">
+								</a>
+							</div>
+							<div class="media-body">
+								<p class="media-heading">卓大哥</p>
+								<h6 class="media-heading">技术大哥，今晚请把网站程序升级一下哈，现在的系统有漏洞，安全起见！</h6>
+							</div>
+						</div>
+
+						<div class="media well">
+							<div class="media-body" align="right">
+								<p class="media-heading">技术大哥</p>
+								<h6 class="media-heading">收到，今晚凌晨2点准时升级</h6>
+							</div>
+							<div class="media-right">
+								<a href="#">
+									<img class="media-object"  src="../images/a.png" style="width: 30px;height: 30px;" alt="...">
+								</a>
+							</div>
+						</div>
+
+						<div class="media well">
+							<div class="media-body" align="right">
+								<p class="media-heading">技术大哥</p>
+								<h6 class="media-heading">你先在站点发布一下通知哈！</h6>
+							</div>
+							<div class="media-right">
+								<a href="#">
+									<img class="media-object"  src="../images/a.png" style="width: 30px;height: 30px;" alt="...">
+								</a>
+							</div>
+						</div>
+
+						<div class="media well">
+							<div class="media-left">
+								<a href="#">
+									<img class="media-object"  src="../images/a.png" style="width: 30px;height: 30px;" alt="...">
+								</a>
+							</div>
+							<div class="media-body">
+								<p class="media-heading">卓大哥</p>
+								<h6 class="media-heading">好嘞。</h6>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<p>输入留言内容</p>
+						<textarea class="form-control" rows="3" placeholder="请输入留言内容"></textarea>
+						<a class="btn btn-default"  role="button">留言</a>
+					</div>
+					<div class="col-md-6" style="margin-top: 10px;">
+						<div class="panel panel-default">
+							<div class="panel-heading">团队联系手册</div>
+							<div class="panel-body">
+								<ul class="list-group">
+												<li class="list-group-item">站长(李小龙):<span class="glyphicon glyphicon-phone"></span>1314848615</li>
+												<li class="list-group-item">技术(大牛哥):<span class="glyphicon glyphicon-phone"></span>1346127694</li>
+												<li class="list-group-item">推广(张二哥):<span class="glyphicon glyphicon-phone"></span>13457815482</li>
+												<li class="list-group-item">客服(王女士):<span class="glyphicon glyphicon-phone"></span>13134567782<span class="glyphicon glyphicon-phone-alt"></span>028-888888</li>
+											</ul>
+
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+	</body>
+
+</html>
